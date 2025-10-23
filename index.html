@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Li Ma9rawnach | أقوى منهج عربي للتداول الاحترافي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: rgb(46, 26, 79);
+            --accent: rgb(252, 134, 32);
+            --white: rgb(255, 255, 255);
+            --accent-soft: rgba(252, 134, 32, 0.12);
+            --primary-soft: rgba(46, 26, 79, 0.12);
+            --text: #2a1d4e;
+            --text-muted: rgba(42, 29, 78, 0.88);
+            --ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Tajawal", sans-serif;
+            background: var(--white);
+            color: var(--text);
+            font-size: 1.12rem;
+            line-height: 1.85;
+            position: relative;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            background-attachment: fixed;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            z-index: -2;
+            width: 560px;
+            height: 560px;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.55;
+            animation: float 14s ease-in-out infinite;
+        }
+
+        body::before {
+            top: -220px;
+            right: -160px;
+            background: radial-gradient(circle, rgba(252, 134, 32, 0.48) 0%, rgba(252, 134, 32, 0) 70%);
+        }
+
+        body::after {
+            bottom: -240px;
+            left: -180px;
+            background: radial-gradient(circle, rgba(46, 26, 79, 0.45) 0%, rgba(46, 26, 79, 0) 70%);
+            animation-delay: 3s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid rgba(46, 26, 79, 0.12);
+            backdrop-filter: blur(14px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.8rem;
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1.4rem 0;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: nowrap;
+            order: 3;
+            margin-left: auto;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            order: 1;
+            white-space: nowrap;
+            margin-right: 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.8rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex: 1;
+            order: 2;
+        }
+
+        .nav-toggle {
+            display: none;
+            padding: 0.65rem 1rem;
+            border-radius: 14px;
+            border: 1px solid rgba(46, 26, 79, 0.16);
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 14px 30px rgba(46, 26, 79, 0.16);
+            align-items: center;
+            gap: 0.7rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .nav-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(46, 26, 79, 0.22);
+            background: rgba(252, 134, 32, 0.1);
+        }
+
+        .nav-toggle__icon {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .nav-toggle__icon span {
+            width: 20px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 999px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-toggle__label {
+            letter-spacing: 0.01em;
+        }
+
+        .nav-actions {
+            order: 3;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-left: auto;
+        }
+
+        body.nav-open .nav-toggle__icon span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        body.nav-open .nav-toggle__icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        body.nav-open .nav-toggle__icon span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .nav-overlay {
+            display: none;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1.05rem 2rem;
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
+            box-shadow: 0 24px 48px rgba(252, 134, 32, 0.32);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 32px 60px rgba(252, 134, 32, 0.4);
+        }
+
+        main section {
+            padding: 5.6rem 0;
+            position: relative;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(252, 134, 32, 0.18);
+            padding: 0.65rem 1.6rem;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+            box-shadow: 0 16px 36px rgba(252, 134, 32, 0.18);
+        }
+
+        .headline {
+            font-size: clamp(2.6rem, 5.6vw, 3rem);
+            margin: 1.2rem 0;
+            line-height: 1.25;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .subheadline {
+            font-size: 1.26rem;
+            color: var(--text-muted);
+            max-width: 38rem;
+            margin-bottom: 2.6rem;
+            line-height: 1.85;
+        }
+
+        .hero-grid {
+            display: flex;
+            gap: 3.4rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .hero-media {
+            flex: 1 1 420px;
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(46, 26, 79, 0.12), rgba(252, 134, 32, 0.2));
+            border: 1px solid rgba(46, 26, 79, 0.16);
+            box-shadow: 0 32px 80px rgba(46, 26, 79, 0.22);
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.03);
+            transition: transform 0.6s ease;
+        }
+
+        .hero-media:hover img {
+            transform: scale(1.1);
+        }
+
+        .coach-tag {
+            position: absolute;
+            bottom: 1.6rem;
+            left: 1.6rem;
+            background: linear-gradient(135deg, rgba(46, 26, 79, 0.95), rgba(252, 134, 32, 0.95));
+            color: var(--white);
+            padding: 0.7rem 1.6rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 20px 40px rgba(46, 26, 79, 0.25);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1.4rem;
+            text-align: right;
+        }
+
+        .metric-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 1px solid rgba(46, 26, 79, 0.12);
+            box-shadow: 0 20px 50px rgba(46, 26, 79, 0.16);
+            text-align: right;
+        }
+
+        .metric-value {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .metric-label {
+            color: rgba(42, 29, 78, 0.8);
+            font-size: 1.05rem;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(46, 26, 79, 0), rgba(46, 26, 79, 0.25), rgba(46, 26, 79, 0));
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.45rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+        }
+
+        .section-lead {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 54rem;
+            margin-bottom: 3.2rem;
+            line-height: 1.85;
+        }
+
+        .benefit-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+        }
+
+        .benefit-card {
+            flex: 1 1 300px;
+            background: rgba(252, 134, 32, 0.2);
+            border: 1px solid rgba(252, 134, 32, 0.25);
+            padding: 2rem;
+            border-radius: 22px;
+            box-shadow: 0 26px 64px rgba(252, 134, 32, 0.24);
+            transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+        }
+
+        .benefit-card h3 {
+            margin: 0 0 1rem;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .benefit-card p {
+            margin: 0;
+            font-size: 1.12rem;
+            color: rgba(42, 29, 78, 0.92);
+        }
+
+        .split-layout {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .pain-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .pain-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+            padding: 1.6rem 1.8rem;
+            border-radius: 20px;
+            background: rgba(46, 26, 79, 0.07);
+            border: 1px solid rgba(46, 26, 79, 0.12);
+            box-shadow: 0 18px 40px rgba(46, 26, 79, 0.14);
+        }
+
+        .pain-item span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 999px;
+            background: rgba(252, 134, 32, 0.18);
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .pain-item p,
+        .trust-item p {
+            color: rgba(42, 29, 78, 0.92) !important;
+            font-size: 1.14rem !important;
+            line-height: 1.85;
+            letter-spacing: 0.01em;
+        }
+
+        .modules-track {
+            display: flex;
+            gap: 1.6rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(46, 26, 79, 0.3) rgba(46, 26, 79, 0.08);
+        }
+
+        .modules-track::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .modules-track::-webkit-scrollbar-track {
+            background: rgba(46, 26, 79, 0.08);
+            border-radius: 999px;
+        }
+
+        .modules-track::-webkit-scrollbar-thumb {
+            background: rgba(46, 26, 79, 0.35);
+            border-radius: 999px;
+        }
+
+        .module-card {
+            flex: 0 0 340px;
+            scroll-snap-align: start;
+            background: linear-gradient(140deg, rgba(255, 255, 255, 0.96), rgba(252, 134, 32, 0.12));
+            border: 1px solid rgba(46, 26, 79, 0.14);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 24px 60px rgba(46, 26, 79, 0.18);
+            transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+        }
+
+        .module-card h4 {
+            margin: 0 0 0.8rem;
+            color: var(--primary);
+            font-size: 1.32rem;
+        }
+
+        .module-card p {
+            margin: 0;
+            font-size: 1.12rem;
+            color: rgba(42, 29, 78, 0.92);
+        }
+
+        .highlight-box {
+            padding: 2.6rem;
+            border-radius: 28px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(252, 134, 32, 0.18));
+            border: 1px solid rgba(46, 26, 79, 0.14);
+            box-shadow: 0 32px 80px rgba(46, 26, 79, 0.18);
+            color: rgba(42, 29, 78, 0.94);
+        }
+
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            flex: 1 1 320px;
+            background: var(--white);
+            border-radius: 26px;
+            padding: 2.4rem;
+            border: 1px solid rgba(46, 26, 79, 0.16);
+            box-shadow: 0 28px 70px rgba(46, 26, 79, 0.2);
+            transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(252, 134, 32, 0.38);
+            box-shadow: 0 34px 80px rgba(252, 134, 32, 0.28);
+            transform: translateY(-10px);
+        }
+
+        .price-tag {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1.4rem 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 1.6rem 0 2.2rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            color: rgba(42, 29, 78, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .pricing-card ul li::before {
+            content: "•";
+            margin-left: 0.5rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .testimonial-card {
+            position: relative;
+            padding: 2.2rem;
+            border-radius: 22px;
+            background: var(--white);
+            border: 1px solid rgba(46, 26, 79, 0.14);
+            box-shadow: 0 26px 60px rgba(46, 26, 79, 0.2);
+        }
+
+        .testimonial-card::before {
+            content: "“";
+            position: absolute;
+            top: -1rem;
+            right: 1.4rem;
+            font-size: 4.8rem;
+            color: rgba(252, 134, 32, 0.35);
+            font-family: serif;
+        }
+
+        .testimonial-card p {
+            margin: 0 0 1.4rem;
+            color: rgba(42, 29, 78, 0.94);
+            font-size: 1.14rem;
+        }
+
+        .testimonial-card strong {
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+
+        .cta-strip {
+            background: linear-gradient(110deg, rgba(46, 26, 79, 0.95), rgba(252, 134, 32, 0.9));
+            color: var(--white);
+            padding: 4.2rem 0;
+        }
+
+        .cta-strip .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.4rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cta-strip h2 {
+            margin: 0;
+            font-size: 2.6rem;
+            font-weight: 800;
+        }
+
+        .cta-strip p {
+            margin: 0.6rem 0 0;
+            font-size: 1.22rem;
+            color: rgba(255, 255, 255, 0.96);
+        }
+
+        footer {
+            padding: 2.8rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        form input,
+        form textarea,
+        form button {
+            font-family: "Tajawal", sans-serif;
+        }
+
+        .form-horizontal {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.4rem;
+        }
+
+        .form-field {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(46, 26, 79, 0.14);
+            border-radius: 18px;
+            padding: 1.2rem 1.3rem;
+            box-shadow: 0 18px 45px rgba(46, 26, 79, 0.16);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+        }
+
+        .form-field:hover,
+        .form-field:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 26px 60px rgba(46, 26, 79, 0.22);
+        }
+
+        .form-field label {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.12rem;
+            text-align: right;
+            position: relative;
+        }
+
+        .form-field label .required {
+            color: #f87171;
+            margin-right: 0.35rem;
+        }
+
+        .form-field--full {
+            grid-column: span 2;
+        }
+
+        form input,
+        form textarea {
+            padding: 0.9rem 1.1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(46, 26, 79, 0.18);
+            font-size: 1.05rem;
+            resize: vertical;
+            min-height: 52px;
+            direction: ltr;
+            text-align: left;
+            background: rgba(46, 26, 79, 0.04);
+            color: var(--text);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        form input::placeholder,
+        form textarea::placeholder {
+            text-align: right;
+            direction: rtl;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: rgba(252, 134, 32, 0.7);
+            box-shadow: 0 0 0 4px rgba(252, 134, 32, 0.18);
+            background: rgba(255, 255, 255, 0.96);
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+
+        .benefit-card:hover,
+        .module-card:hover,
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 34px 80px rgba(46, 26, 79, 0.22);
+        }
+
+        @media (max-width: 1080px) {
+            .headline {
+                font-size: clamp(2.4rem, 5vw, 3.6rem);
+            }
+        }
+
+        @media (max-width: 960px) {
+            .container {
+                padding-top: 10px;
+                padding-right: 22.4px;
+                padding-bottom: 10px;
+                padding-left: 22.4px;
+            }
+
+            .nav-bar {
+                position: relative;
+                gap: 1rem;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .brand {
+                order: 1;
+                width: 100%;
+                text-align: center;
+                margin-left: 0;
+            }
+
+            .nav-actions {
+                order: 2;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+                margin-right: 0;
+            }
+
+            .nav-actions .cta-button {
+                flex: 1 1 240px;
+                justify-content: center;
+            }
+
+            .nav-actions .nav-toggle {
+                flex: 0 0 auto;
+            }
+
+            .nav-bar {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-areas:
+                    "brand toggle"
+                    "cta cta";
+                align-items: center;
+                gap: 0.8rem 1.2rem;
+                justify-items: stretch;
+            }
+
+            .brand {
+                grid-area: brand;
+                text-align: left;
+                margin-right: 0;
+                order: 0;
+            }
+
+            .nav-actions {
+                grid-area: cta;
+                display: contents;
+                margin-left: 0;
+            }
+
+            .nav-actions .cta-button {
+                grid-area: cta;
+                justify-self: stretch;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .nav-actions .nav-toggle {
+                grid-area: toggle;
+                width: 100%;
+                justify-self: stretch;
+            }
+
+            .nav-toggle {
+                grid-area: toggle;
+                display: inline-flex;
+                position: static;
+                transform: none;
+                width: 100%;
+                justify-content: center;
+            }
+
+            #primary-nav {
+                display: none;
+                position: fixed;
+                top: 92px;
+                left: 50%;
+                transform: translate(-50%, calc(-100% - 32px));
+                width: min(92%, 420px);
+                background: rgba(255, 255, 255, 0.96);
+                border: 1px solid rgba(46, 26, 79, 0.16);
+                border-radius: 24px;
+                box-shadow: 0 32px 70px rgba(46, 26, 79, 0.28);
+                padding: 1.6rem 1.4rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                pointer-events: none;
+                opacity: 0;
+                transition: transform 0.35s var(--ease-out), opacity 0.3s ease;
+                z-index: 100;
+                font-size: 1.05rem;
+                backdrop-filter: blur(18px);
+                max-height: calc(100vh - 120px);
+                overflow-y: auto;
+            }
+
+            body.nav-open #primary-nav {
+                display: flex;
+                transform: translate(-50%, 0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            #primary-nav a {
+                padding: 0.9rem 1.2rem;
+                border-radius: 16px;
+                background: rgba(46, 26, 79, 0.08);
+                border: 1px solid rgba(46, 26, 79, 0.12);
+                text-align: center;
+                transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+            }
+
+            #primary-nav a:hover {
+                background: rgba(252, 134, 32, 0.18);
+                color: var(--primary);
+                transform: translateY(-2px);
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            body.nav-open {
+                overflow: hidden;
+            }
+
+            .nav-overlay {
+                display: block;
+                position: fixed;
+                inset: 0;
+                background: rgba(46, 26, 79, 0.55);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+                z-index: 90;
+            }
+
+            .brand {
+                order: 1;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-actions {
+                order: 2;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+            }
+
+            .nav-actions .cta-button {
+                flex: 1 1 240px;
+                justify-content: center;
+            }
+
+            .nav-actions .nav-toggle {
+                flex: 0 0 auto;
+            }
+            body.nav-open .nav-overlay {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .hero-grid,
+            .split-layout {
+                flex-direction: column;
+            }
+
+            .hero-media {
+                max-width: 520px;
+                margin: 0 auto;
+            }
+
+            main section {
+                padding: 4rem 0;
+            }
+
+            .metrics {
+                text-align: center;
+            }
+
+            .benefit-row,
+            .pricing-grid {
+                gap: 1.4rem;
+            }
+
+            .modules-track {
+                padding-right: 0.6rem;
+            }
+
+            .cta-strip .container {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .cta-strip a {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+            
+
+            .subheadline {
+                font-size: 1.12rem;
+            }
+
+            .section-title {
+                font-size: 2.1rem;
+            }
+
+            .section-lead {
+                font-size: 1.05rem;
+            }
+
+            .coach-tag {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .metric-card {
+                padding: 1.4rem;
+            }
+
+            .pricing-card,
+            .benefit-card,
+            .module-card {
+                transform: none !important;
+            }
+
+            .modules-track {
+                padding-right: 0.6rem;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+        
+
+        @media (max-width: 720px) {
+            body {
+                font-size: 1.05rem;
+            }
+
+            .headline {
+                font-size: clamp(2.1rem, 8vw, 3rem);
+            }
+
+            .subheadline {
+                font-size: 1.12rem;
+            }
+
+            .section-title {
+                font-size: 2.1rem;
+            }
+
+            .section-lead {
+                font-size: 1.05rem;
+            }
+
+            .coach-tag {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .metric-card {
+                padding: 1.4rem;
+            }
+
+            .modules-track {
+                padding-right: 0.6rem;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-field--full {
+                grid-column: span 1;
+            }
+
+            .form-actions {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .cta-button {
+                padding: 0.9rem 1.4rem;
+                font-size: 0.95rem;
+            }
+
+            .coach-tag {
+                bottom: 1rem;
+                left: 1rem;
+            }
+
+            .badge {
+                font-size: 0.9rem;
+                padding: 0.5rem 1.2rem;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-value {
+                font-size: 2rem;
+            }
+
+            .cta-strip h2 {
+                font-size: 2.2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-field--full {
+                grid-column: span 1;
+            }
+
+            .form-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-bar">
+            <div class="brand">Trading Li Ma9rawnach</div>
+            <nav id="primary-nav">
+                <a href="#hero">الرئيسية</a>
+                <a href="#promise">لماذا الدورة</a>
+                <a href="#modules">الوحدات</a>
+                <a href="#pricing">الاستثمار</a>
+                <a href="#testimonials">الشهادات</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="cta-button" href="#contact">احجز مقعدك الآن</a>
+                <button class="nav-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="primary-nav">
+                    <span class="nav-toggle__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="nav-toggle__label">القائمة</span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-overlay" data-nav-overlay></div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container hero-grid">
+                <div style="flex: 1 1 420px;">
+                    <span class="badge">برنامج مباشر + تطبيق حي + أدوات جاهزة</span>
+                    <h1 class="headline">حوّل تداولك من محاولات عشوائية إلى أداء يفتخر به أي مدير محفظة.</h1>
+                    <p class="subheadline">دورة <strong>Trading Li Ma9rawnach</strong> تقودك في رحلة مفعمة بالطاقة: ستستعيد الثقة، تبني خطة تداول متكاملة، وتنفذ صفقاتك بمنهجية مؤسساتية، عبر تجربة تعليمية تفاعلية تبقي حماسك مشتعلاً من اليوم الأول.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:1.2rem; margin-bottom:2.6rem;">
+                        <a class="cta-button" href="#contact">سجّل اهتمامك اليوم</a>
+                        <a class="cta-button" style="background: var(--primary); box-shadow: 0 24px 48px rgba(46, 26, 79, 0.28);" href="#modules">اكتشف منهج الوحدات</a>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric-card">
+                            <div class="metric-value">+87%</div>
+                            <div class="metric-label">من المتدربين رفعوا نسبة الربح خلال 6 أسابيع</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">12,400</div>
+                            <div class="metric-label">متداول اعتمدوا أدوات يونس في الأسواق</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">14 سنة</div>
+                            <div class="metric-label">خبرة حية مع أسواق الأسهم، العقود، والفوركس</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-media">
+                    <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1000&q=80" alt="يونس أمزيان - مدرب التداول">
+                    <div class="coach-tag">يونس أمزيان - مدرب التداول</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="promise">
+            <div class="container split-layout">
+                <div style="flex: 1 1 460px;">
+                    <span class="badge">لمن صممت هذه التجربة؟</span>
+                    <h2 class="section-title">إذا كنت تريد نتائج تثير حماسك كل أسبوع، فأنت في المكان الصحيح.</h2>
+                    <p class="section-lead">منهج Trading Li Ma9rawnach لا يكتفي بتلقين أدوات. إنه يرفع إيقاعك كمستثمر، يمكّنك من اتخاذ قرارات بسرعة، ويمنحك طاقة فريق يعمل جنباً إلى جنب معك للوصول إلى أرباح ملموسة. كل جزء مصمم لإشعال الحماس وتحويله إلى أداء فعلي.</p>
+                    <div class="benefit-row">
+                        <div class="benefit-card">
+                            <h3>طاقة الميدان</h3>
+                            <p>جلسات مباشرة مليئة بالتحليل اللحظي، أمثلة حية، وانتباه كامل لتفاصيل صفقاتك.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3>قوالب جاهزة</h3>
+                            <p>دفتر تداول تفاعلي، لوحة تحكم للمخاطر، وقوائم تفقد تحافظ على حماس التنفيذ دون ارتباك.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3>مجتمع نبضه عالٍ</h3>
+                            <p>مجموعة متداولين جادين تتحقق من تطبيقك، تشجعك يومياً، وتحتفل بأصغر إنجاز.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1 1 380px;">
+                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-top:0;">هل يصفك أحد هذه السيناريوهات؟</h3>
+                    <div class="pain-list">
+                        <div class="pain-item">
+                            <span>1</span>
+                            <div>
+                                <strong>تدخل السوق بحماس لكن بدون خريطة واضحة،</strong>
+                                <p style="margin: 0; color: var(--text-muted); font-size: 1.08rem;">وينتهي بك الأمر إما بالخروج مبكراً أو خسارة غير مخطط لها.</p>
+                            </div>
+                        </div>
+                        <div class="pain-item">
+                            <span>2</span>
+                            <div>
+                                <strong>تتنقل بين استراتيجيات كثيرة،</strong>
+                                <p style="margin: 0; color: var(--text-muted); font-size: 1.08rem;">وتحتاج منهجاً واحداً يربط التحليل، التنفيذ، والمراجعة في منظومة متناغمة.</p>
+                            </div>
+                        </div>
+                        <div class="pain-item">
+                            <span>3</span>
+                            <div>
+                                <strong>تبحث عن دعم بشحنة عالية،</strong>
+                                <p style="margin: 0; color: var(--text-muted); font-size: 1.08rem;">يحمّسك على الالتزام بالواجبات اليومية ويحاسبك على النتائج.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 2.4rem;">
+                        <h3 style="margin-top:0; color: var(--primary); font-size: 1.6rem;">وعدنا لك:</h3>
+                        <p style="margin: 0; color: rgba(42, 29, 78, 0.9); font-size: 1.1rem;">خلال 90 يوماً ستمتلك نظام تداول نابض بالحياة، مدعوماً بمؤشرات أداء، وجاهزاً للتوسع بثقة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="modules">
+            <div class="container">
+                <span class="badge">خريطة الطريق</span>
+                <h2 class="section-title">6 وحدات مشحونة بالطاقة تعيد تشكيل تداولك أفقياً.</h2>
+                <p class="section-lead">كل وحدة تمثل منعطفاً حقيقياً في مسارك. ستتحرك أفقياً من الفوضى إلى نظام متكامل، مع تطبيق حي بعد كل درس.</p>
+                <div class="modules-track">
+                    <article class="module-card">
+                        <span class="badge" style="background: rgba(46, 26, 79, 0.14); color: var(--primary);">الوحدة 1</span>
+                        <h4>إعادة تشغيل عقلية المتداول</h4>
+                        <p>تفكيك أنماطك الحالية، رسم أهداف مشتعلة، وتثبيت أساس التفكير المنظم قبل العودة للسوق.</p>
+                    </article>
+                    <article class="module-card">
+                        <span class="badge" style="background: rgba(46, 26, 79, 0.14); color: var(--primary);">الوحدة 2</span>
+                        <h4>رادار السوق النابض</h4>
+                        <p>من الماكرو إلى الميكرو، ستتعلم قراءة تدفق السيولة، حركة المؤسسات، وإعداد سيناريوهات سريعة التفاعل.</p>
+                    </article>
+                    <article class="module-card">
+                        <span class="badge" style="background: rgba(46, 26, 79, 0.14); color: var(--primary);">الوحدة 3</span>
+                        <h4>هندسة خطة التداول</h4>
+                        <p>بناء نموذج دخول وخروج، ضبط إدارة رأس المال، وتفعيل قوائم تفقد قبل تنفيذ أي صفقة.</p>
+                    </article>
+                    <article class="module-card">
+                        <span class="badge" style="background: rgba(46, 26, 79, 0.14); color: var(--primary);">الوحدة 4</span>
+                        <h4>تنفيذ عالي الأدرينالين</h4>
+                        <p>تطبيق حي مع يونس، مراجعات فورية، وأتمتة قواعد المخاطر حتى تركز على اللحظة الفاصلة.</p>
+                    </article>
+                    <article class="module-card">
+                        <span class="badge" style="background: rgba(46, 26, 79, 0.14); color: var(--primary);">الوحدة 5</span>
+                        <h4>التوسع بثقة</h4>
+                        <p>رفع أحجام مراكزك تدريجياً، بناء محافظ موازية، ورسم خطة نمو شهرية وسنوية.</p>
+                    </article>
+                    <article class="module-card">
+                        <span class="badge" style="background: rgba(46, 26, 79, 0.14); color: var(--primary);">الوحدة 6</span>
+                        <h4>تشغيل لوحة القياس الذكية</h4>
+                        <p>أتمتة تقارير الأداء، ربط التنبيهات اليومية، وتحويل نتاجك إلى KPI واضح لكل أسبوع.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="coach">
+            <div class="container split-layout">
+                <div style="flex: 1 1 420px;">
+                    <span class="badge">عن المدرب</span>
+                    <h2 class="section-title">يونس أمزيان: المتداول الذي يدرّب أثناء التداول.</h2>
+                    <p class="section-lead">بدأ يونس رحلته عام 2009، متنقلاً بين مكاتب وساطة في الدار البيضاء، لندن، ودبي. قاد فرق تداول مؤسسية، صمم أنظمة تحوط لصناديق خاصة، واليوم يركز على تزويد المتداولين العرب بمنهج عملي يضاهي المدارس العالمية.</p>
+                    <div class="benefit-row" style="gap:1.4rem;">
+                        <div class="benefit-card" style="background: rgba(46, 26, 79, 0.12); box-shadow: 0 24px 60px rgba(46, 26, 79, 0.22);">
+                            <h3>خبرة متعددة الأسواق</h3>
+                            <p>أسهم، عقود آجلة، فوركس، وكريبتو. كل أداة لها إطارها في الدورة مع أمثلة حية.</p>
+                        </div>
+                        <div class="benefit-card" style="background: rgba(252, 134, 32, 0.22);">
+                            <h3>متابعة عالية الطاقة</h3>
+                            <p>جلسات مراجعة فردية، قنوات خاصة للأسئلة، وتنبيهات يومية لتحافظ على الزخم.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1 1 360px;">
+                    <div class="highlight-box">
+                        <h3 style="margin-top:0; font-size:1.6rem; color: var(--primary);">ماذا يحدث بعد التسجيل مباشرة؟</h3>
+                        <ul style="list-style:none; margin:1.6rem 0 0; padding:0; display:flex; flex-direction:column; gap:1.2rem; font-size:1.1rem; color: rgba(42, 29, 78, 0.92);">
+                            <li><strong>دخول فوري</strong> إلى منصة الوحدات مع جدول حي للجلسات التفاعلية.</li>
+                            <li><strong>جلسة تقييم شخصية</strong> لقياس وضعك الحالي وتحديد أهداف متحمسة لـ 30، 60، 90 يوماً.</li>
+                            <li><strong>تسليم حقيبة أدوات</strong> تشمل دفتر التداول، لوحة المخاطر، وقائمة التفقد اليومية.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="pricing">
+            <div class="container">
+                <span class="badge">اختر طريقك</span>
+                <h2 class="section-title">استثمار واحد يشعل مسيرتك شهوراً للأمام.</h2>
+                <p class="section-lead">كل خطة تشمل تحديثات مدى الحياة، دعم المجتمع، والوصول إلى الأدوات الذكية. لا رسوم مفاجئة، ولا محتوى مخفي.</p>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <span class="badge" style="background: rgba(46, 26, 79, 0.14); color: var(--primary); margin-bottom: 1rem;">للانطلاقة القوية</span>
+                        <h3 style="margin:0; font-size:1.6rem; color:var(--primary);">خطة المتداول الصاعد</h3>
+                        <div class="price-tag">999 درهم</div>
+                        <ul>
+                            <li>الوحدات 1 إلى 3 مع تطبيقات مباشرة</li>
+                            <li>3 جلسات بث حي مع يونس وفريقه</li>
+                            <li>لوحة إدارة رأس مال جاهزة للاستخدام</li>
+                            <li>مجموعة دعم يومية للمبتدئين الجادين</li>
+                        </ul>
+                        <a class="cta-button" href="#contact">ابدأ الآن</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <span class="badge" style="background: rgba(252, 134, 32, 0.24); color: var(--primary); margin-bottom: 1rem;">الأكثر طلباً</span>
+                        <h3 style="margin:0; font-size:1.6rem; color:var(--primary);">خطة التنفيذ الكامل</h3>
+                        <div class="price-tag">2,450 درهم</div>
+                        <ul>
+                            <li>الوحدات الست كاملة + جلسات أسئلة إضافية</li>
+                            <li>متابعة أسبوعية فردية لمدة 12 أسبوعاً</li>
+                            <li>أتمتة تقارير الأداء + إستراتيجية حصرية</li>
+                            <li>مقعد في غرفة التداول الصباحية لمدة 3 أشهر</li>
+                        </ul>
+                        <a class="cta-button" href="#contact">احجز مقعدك</a>
+                    </div>
+                    <div class="pricing-card">
+                        <span class="badge" style="background: rgba(46, 26, 79, 0.14); color: var(--primary); margin-bottom: 1rem;">للشركاء الجادين</span>
+                        <h3 style="margin:0; font-size:1.6rem; color:var(--primary);">شراكة النخبة</h3>
+                        <div class="price-tag">6,900 درهم</div>
+                        <ul>
+                            <li>برنامج خاص لمدة 6 أشهر مع خطة نمو أسبوعية</li>
+                            <li>مراجعات يومية قصيرة أثناء جلسة التداول</li>
+                            <li>تصميم إستراتيجية مؤسسية مخصصة لك بالكامل</li>
+                            <li>دعم على مدار الساعة في أيام السوق ورسائل تنبيه</li>
+                        </ul>
+                        <a class="cta-button" href="#contact">تواصل مع الفريق</a>
+                    </div>
+                </div>
+                <div class="highlight-box" style="margin-top:3rem;">
+                    <strong style="font-size:1.2rem; color: var(--primary);">ضمان حقيقي:</strong>
+                    <p style="margin:1rem 0 0; font-size:1.12rem; color: rgba(42, 29, 78, 0.92);">إذا التزمت بالتطبيق ولم تلاحظ تحسناً ملموساً خلال 90 يوماً، نعمل معك بشكل فردي دون أي مقابل إضافي أو نعيد استثمارك بالكامل.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="testimonials">
+            <div class="container">
+                <span class="badge">شهادات تضخ الحماس</span>
+                <h2 class="section-title">متداولون من العالم العربي يشاركون قفزاتهم.</h2>
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <p>“أول مرة أشعر أنني محاطة بفريق يهتم بنجاحي فعلاً. بعد شهرين، أصبح لدي دفتر تداول منظم، وثقة للدخول في الصفقات بدون خوف.”</p>
+                        <strong>أسماء ح. - متداولة أسهم</strong>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>“يونس يرفع حماسك لكنه لا يتركك حتى تطبق. غرفة التداول أشبه بمعسكر فوز يومي. النتائج تضاعفت والضبط النفسي صار أقوى.”</p>
+                        <strong>محمد ر. - مدير محفظة خاصة</strong>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>“لم أجد دورة عربية بهذا العمق. كل درس مليء بالتطبيق، وكل أسبوع أشعر بالتطور. الآن أرباحي لها نمط واضح.”</p>
+                        <strong>سارة ل. - متداولة عقود آجلة</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-strip" id="enroll">
+            <div class="container">
+                <div>
+                    <h2>الطاقة موجودة، الخطوة المقبلة بيدك.</h2>
+                    <p>أرسل بياناتك وخلال 24 ساعة سنتواصل معك لتحديد مكالمة استكشافية مجانية.</p>
+                </div>
+                <a class="cta-button" href="mailto:team@tradinglima9rawnach.com" style="background: var(--white); color: var(--primary); box-shadow: none;">إحجز مكالمتك الآن</a>
+            </div>
+        </div>
+
+        <section id="contact">
+            <div class="container">
+                <div class="highlight-box">
+                    <h2 class="section-title" style="margin-top:0;">دعنا نبدأ.</h2>
+                    <p class="section-lead">املأ البيانات التالية وسنرسل لك ملف الترحيب، جدول الجلسات، وبونص “قائمة التفقد الذكية قبل أي صفقة”.</p>
+                    <form id="interest-form" class="form-horizontal">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="full_name">الاسم الكامل <span class="required">*</span></label>
+                                <input id="full_name" type="text" name="full_name" placeholder="أدخل اسمك الكامل" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="whatsapp_number">رقم الواتساب <span class="required">*</span></label>
+                                <input id="whatsapp_number" type="tel" name="whatsapp_number" placeholder="أدخل رقم الواتساب مع رمز الدولة" inputmode="tel" pattern="\+[0-9 ]{8,20}" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+                                <input id="email" type="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="experience_years">سنوات الخبرة <span class="required">*</span></label>
+                                <input id="experience_years" type="text" name="experience_years" placeholder="كم سنة تتداول؟" required>
+                            </div>
+                            <div class="form-field form-field--full">
+                                <label for="goal">هدفك بعد الدورة <span class="required">*</span></label>
+                                <textarea id="goal" name="goal" rows="3" placeholder="ما هو الهدف الذي تريد تحقيقه بعد الدورة؟" required></textarea>
+                            </div>
+                            <div class="form-field form-field--full">
+                                <label for="referral">مصدر معرفتك بنا <span class="required">*</span></label>
+                                <input id="referral" type="text" name="referral" placeholder="من أين سمعت عن Trading Li Ma9rawnach؟" required>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="cta-button" style="border:none;">إرسال الطلب</button>
+                        </div>
+                    </form>
+                    <p id="form-status" style="margin-top:1rem; color: rgba(255,255,255,0.95); font-size:1rem;"></p>
+                    <p style="margin-top:0.6rem; color: rgba(42, 29, 78, 0.92); font-size:0.95rem;">نحترم خصوصيتك. لن نرسل أي محتوى خارج إطار التداول.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            © <span id="year"></span> Trading Li Ma9rawnach. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const bodyEl = document.body;
+        const navToggle = document.querySelector(".nav-toggle");
+        const navOverlay = document.querySelector("[data-nav-overlay]");
+        const navLinks = document.querySelectorAll("#primary-nav a");
+
+        const updateToggleLabel = (isOpen) => {
+            if (navToggle) {
+                navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                const labelEl = navToggle.querySelector(".nav-toggle__label");
+                if (labelEl) {
+                    labelEl.textContent = isOpen ? "إغلاق" : "القائمة";
+                }
+            }
+        };
+
+        const closeNav = () => {
+            if (bodyEl.classList.contains("nav-open")) {
+                bodyEl.classList.remove("nav-open");
+                updateToggleLabel(false);
+            }
+        };
+
+        if (navToggle) {
+            navToggle.addEventListener("click", () => {
+                const isOpen = bodyEl.classList.toggle("nav-open");
+                updateToggleLabel(isOpen);
+            });
+        }
+
+        if (navOverlay) {
+            navOverlay.addEventListener("click", closeNav);
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", closeNav);
+        });
+
+        window.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeNav();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 960) {
+                closeNav();
+            }
+        });
+
+        const form = document.getElementById("interest-form");
+        const statusEl = document.getElementById("form-status");
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytrFWidfORN6_BIqSZTVdZPkcSRO55Sg1o04OLJe2cS6AEcp3SBSp-JtvTAkmp/exec"; // TODO: replace with your deployed Apps Script URL
+
+        if (form) {
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                statusEl.textContent = "جارٍ إرسال طلبك...";
+                statusEl.style.color = "#ffffff";
+
+                const formData = new FormData(form);
+
+                const rawPhone = (formData.get("whatsapp_number") || "").trim();
+                const digitsOnly = rawPhone.replace(/[^\d]/g, "");
+                const normalizedPhone = digitsOnly ? `'+${digitsOnly}` : "";
+                if (digitsOnly) {
+                    form.querySelector('[name="whatsapp_number"]').value = `+${digitsOnly}`;
+                }
+                formData.set("whatsapp_number", normalizedPhone);
+
+                try {
+                    await fetch(SCRIPT_URL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: formData
+                    });
+
+                    form.reset();
+                    statusEl.textContent = "تم استقبال معلوماتك بنجاح! سنعاود الاتصال خلال 24 ساعة.";
+                    statusEl.style.color = "#27e1a6";
+                } catch (error) {
+                    console.error(error);
+                    statusEl.textContent = "حدث خطأ غير متوقع، حاول مرة أخرى أو راسلنا مباشرة.";
+                    statusEl.style.color = "#f87171";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
